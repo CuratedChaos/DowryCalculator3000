@@ -1,0 +1,1730 @@
+/* ==========================================
+   DOWRY CALCULATOR 3000™
+   PART 1 - FOUNDATION
+========================================== */
+
+/* ==========================================
+   RESET
+========================================== */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:
+    "Segoe UI",
+    sans-serif;
+
+}
+
+/* ==========================================
+   BODY
+========================================== */
+
+body{
+
+    min-height:100vh;
+
+    background:#fff8ee;
+
+    color:#222;
+
+    padding:30px;
+
+}
+
+/* ==========================================
+   CONTAINER
+========================================== */
+
+.container{
+
+    max-width:1500px;
+
+    margin:auto;
+
+}
+
+/* ==========================================
+   GENDER SCREEN
+========================================== */
+
+#genderSelection{
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+#genderSelection h2{
+
+    font-size:2.7rem;
+
+    text-align:center;
+
+}
+
+#genderSelection button{
+
+    width:300px;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:16px;
+
+    cursor:pointer;
+
+    background:#22c55e;
+
+    color:black;
+
+    font-size:1.2rem;
+
+    font-weight:700;
+
+    transition:.25s;
+
+}
+
+#genderSelection button:hover{
+
+    transform:scale(1.05);
+
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+header{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+}
+
+header h1{
+
+    font-size:3rem;
+
+    color:#16a34a;
+
+}
+
+.tagline{
+
+    margin-top:10px;
+
+    font-size:1.1rem;
+
+}
+
+.subtag{
+
+    margin-top:8px;
+
+    opacity:.75;
+
+}
+
+/* ==========================================
+   STOCK TICKER
+========================================== */
+
+.stockTicker{
+
+    display:flex;
+
+    gap:25px;
+
+    padding:15px;
+
+    margin-bottom:25px;
+
+    background:white;
+
+    border:2px solid #f0e2c8;
+
+    border-radius:15px;
+
+    font-weight:700;
+
+    overflow:hidden;
+
+}
+
+.stockTicker span{
+
+    white-space:nowrap;
+
+}
+
+/* ==========================================
+   MAIN GRID
+========================================== */
+
+.main-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    420px 1fr;
+
+    gap:25px;
+
+}
+/* ==========================================
+   PART 2 - PREVIEW PANEL & AVATAR
+========================================== */
+
+/* ==========================================
+   CARD BASE
+========================================== */
+
+.preview-card,
+.controls,
+#loadingScreen,
+#resultCard{
+
+    background:white;
+
+    border:2px solid #f0e2c8;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:
+    0 10px 25px
+    rgba(0,0,0,.08);
+
+}
+
+/* ==========================================
+   PREVIEW CARD
+========================================== */
+
+.preview-card{
+
+    position:sticky;
+
+    top:20px;
+
+    height:fit-content;
+
+}
+
+.preview-card h2{
+
+    text-align:center;
+
+    margin-bottom:10px;
+
+}
+
+.previewSubtitle{
+
+    text-align:center;
+
+    opacity:.7;
+
+    margin-bottom:20px;
+
+}
+
+/* ==========================================
+   CHARACTER
+========================================== */
+
+#character{
+
+    width:260px;
+
+    height:430px;
+
+    margin:auto;
+
+    position:relative;
+
+}
+
+/* ==========================================
+   HEAD
+========================================== */
+
+#head{
+
+    width:100px;
+
+    height:100px;
+
+    border-radius:50%;
+
+    background:#d8a36d;
+
+    position:absolute;
+
+    top:60px;
+
+    left:80px;
+
+    z-index:3;
+
+    transition:.3s;
+
+}
+
+/* ==========================================
+   HAIR
+========================================== */
+
+#hairLeft,
+#hairMiddle,
+#hairRight{
+
+    position:absolute;
+
+    top:45px;
+
+    height:30px;
+
+    background:#111;
+
+    z-index:4;
+
+    transition:.4s;
+
+}
+
+#hairLeft{
+
+    width:30px;
+
+    left:75px;
+
+    border-radius:
+    20px 0 0 10px;
+
+}
+
+#hairMiddle{
+
+    width:50px;
+
+    left:105px;
+
+}
+
+#hairRight{
+
+    width:30px;
+
+    left:155px;
+
+    border-radius:
+    0 20px 10px 0;
+
+}
+
+/* ==========================================
+   BODY
+========================================== */
+
+#avatarBody{
+
+    width:130px;
+
+    height:170px;
+
+    background:#2563eb;
+
+    border-radius:25px;
+
+    position:absolute;
+
+    left:65px;
+
+    top:160px;
+
+}
+
+/* ==========================================
+   ARMS
+========================================== */
+
+#avatarBody::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:35px;
+
+    height:95px;
+
+    background:#2563eb;
+
+    left:-20px;
+
+    border-radius:20px;
+
+}
+
+#avatarBody::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:35px;
+
+    height:95px;
+
+    background:#2563eb;
+
+    right:-20px;
+
+    border-radius:20px;
+
+}
+
+/* ==========================================
+   ICONS
+========================================== */
+
+#wallet{
+
+    position:absolute;
+
+    right:5px;
+
+    bottom:80px;
+
+    font-size:40px;
+
+}
+
+#degreeIcon{
+
+    position:absolute;
+
+    left:5px;
+
+    bottom:80px;
+
+    font-size:40px;
+
+}
+
+#teamIcon{
+
+    position:absolute;
+
+    left:110px;
+
+    bottom:15px;
+
+    font-size:40px;
+
+}
+
+/* ==========================================
+   LIVE REMARK
+========================================== */
+
+#liveRemark{
+
+    margin-top:20px;
+
+    padding:15px;
+
+    background:#f8f4ea;
+
+    border:1px solid #f0e2c8;
+
+    border-radius:12px;
+
+    text-align:center;
+
+    line-height:1.6;
+
+}
+
+/* ==========================================
+   MINI STATS
+========================================== */
+
+.miniStats{
+
+    margin-top:15px;
+
+}
+
+.miniStats div{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:10px;
+
+    margin-top:8px;
+
+    background:#f8f4ea;
+
+    border-radius:10px;
+
+}
+/* ==========================================
+   PART 3 - CONTROLS PANEL
+========================================== */
+
+/* ==========================================
+   CONTROLS
+========================================== */
+
+.controls{
+
+    max-height:85vh;
+
+    overflow-y:auto;
+
+    padding-right:10px;
+
+}
+
+/* ==========================================
+   SECTIONS
+========================================== */
+
+.controls section{
+
+    margin-bottom:35px;
+
+}
+
+.controls h2{
+
+    color:#16a34a;
+
+    margin-bottom:15px;
+
+    padding-bottom:10px;
+
+    border-bottom:
+    2px solid #f0e2c8;
+
+}
+
+/* ==========================================
+   LABELS
+========================================== */
+
+label{
+
+    display:block;
+
+    margin-top:15px;
+
+    margin-bottom:6px;
+
+    font-weight:600;
+
+}
+
+/* ==========================================
+   INPUTS
+========================================== */
+
+input,
+select{
+
+    width:100%;
+
+    padding:12px;
+
+    border:2px solid #f0e2c8;
+
+    border-radius:12px;
+
+    background:white;
+
+    color:#222;
+
+    outline:none;
+
+    transition:.25s;
+
+}
+
+/* ==========================================
+   INPUT FOCUS
+========================================== */
+
+input:focus,
+select:focus{
+
+    border-color:#22c55e;
+
+    box-shadow:
+    0 0 0 4px
+    rgba(34,197,94,.15);
+
+}
+
+/* ==========================================
+   NUMBER INPUTS
+========================================== */
+
+input[type="number"]{
+
+    font-weight:600;
+
+}
+
+/* ==========================================
+   RANGE SLIDERS
+========================================== */
+
+input[type="range"]{
+
+    padding:0;
+
+    accent-color:#22c55e;
+
+    cursor:pointer;
+
+}
+
+/* Chrome */
+
+input[type="range"]::-webkit-slider-thumb{
+
+    width:18px;
+
+    height:18px;
+
+    cursor:pointer;
+
+}
+
+/* ==========================================
+   SELECTS
+========================================== */
+
+select{
+
+    cursor:pointer;
+
+}
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+.controls::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+.controls::-webkit-scrollbar-track{
+
+    background:#fff8ee;
+
+}
+
+.controls::-webkit-scrollbar-thumb{
+
+    background:#22c55e;
+
+    border-radius:20px;
+
+}
+
+/* ==========================================
+   FIELD SPACING
+========================================== */
+
+.controls input{
+
+    margin-bottom:4px;
+
+}
+
+.controls select{
+
+    margin-bottom:4px;
+
+}
+
+/* ==========================================
+   SECTION HOVER
+========================================== */
+
+.controls section{
+
+    transition:.25s;
+
+}
+
+.controls section:hover{
+
+    transform:
+    translateY(-2px);
+
+}
+/* ==========================================
+   PART 3 - CONTROLS PANEL
+========================================== */
+
+/* ==========================================
+   CONTROLS
+========================================== */
+
+.controls{
+
+    max-height:85vh;
+
+    overflow-y:auto;
+
+    padding-right:10px;
+
+}
+
+/* ==========================================
+   SECTIONS
+========================================== */
+
+.controls section{
+
+    margin-bottom:35px;
+
+}
+
+.controls h2{
+
+    color:#16a34a;
+
+    margin-bottom:15px;
+
+    padding-bottom:10px;
+
+    border-bottom:
+    2px solid #f0e2c8;
+
+}
+
+/* ==========================================
+   LABELS
+========================================== */
+
+label{
+
+    display:block;
+
+    margin-top:15px;
+
+    margin-bottom:6px;
+
+    font-weight:600;
+
+}
+
+/* ==========================================
+   INPUTS
+========================================== */
+
+input,
+select{
+
+    width:100%;
+
+    padding:12px;
+
+    border:2px solid #f0e2c8;
+
+    border-radius:12px;
+
+    background:white;
+
+    color:#222;
+
+    outline:none;
+
+    transition:.25s;
+
+}
+
+/* ==========================================
+   INPUT FOCUS
+========================================== */
+
+input:focus,
+select:focus{
+
+    border-color:#22c55e;
+
+    box-shadow:
+    0 0 0 4px
+    rgba(34,197,94,.15);
+
+}
+
+/* ==========================================
+   NUMBER INPUTS
+========================================== */
+
+input[type="number"]{
+
+    font-weight:600;
+
+}
+
+/* ==========================================
+   RANGE SLIDERS
+========================================== */
+
+input[type="range"]{
+
+    padding:0;
+
+    accent-color:#22c55e;
+
+    cursor:pointer;
+
+}
+
+/* Chrome */
+
+input[type="range"]::-webkit-slider-thumb{
+
+    width:18px;
+
+    height:18px;
+
+    cursor:pointer;
+
+}
+
+/* ==========================================
+   SELECTS
+========================================== */
+
+select{
+
+    cursor:pointer;
+
+}
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+.controls::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+.controls::-webkit-scrollbar-track{
+
+    background:#fff8ee;
+
+}
+
+.controls::-webkit-scrollbar-thumb{
+
+    background:#22c55e;
+
+    border-radius:20px;
+
+}
+
+/* ==========================================
+   FIELD SPACING
+========================================== */
+
+.controls input{
+
+    margin-bottom:4px;
+
+}
+
+.controls select{
+
+    margin-bottom:4px;
+
+}
+
+/* ==========================================
+   SECTION HOVER
+========================================== */
+
+.controls section{
+
+    transition:.25s;
+
+}
+
+.controls section:hover{
+
+    transform:
+    translateY(-2px);
+
+}
+/* ==========================================
+   PART 4 - BUTTONS & LOADING
+========================================== */
+
+/* ==========================================
+   RISK WARNING
+========================================== */
+
+.riskWarning{
+
+    margin-top:20px;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    background:#fff3cd;
+
+    border:2px solid #ffe08a;
+
+    color:#664d03;
+
+    line-height:1.6;
+
+    font-weight:600;
+
+}
+
+/* ==========================================
+   CALCULATE BUTTON
+========================================== */
+
+#calculateBtn{
+
+    width:100%;
+
+    margin-top:20px;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:15px;
+
+    cursor:pointer;
+
+    background:#22c55e;
+
+    color:black;
+
+    font-size:1.1rem;
+
+    font-weight:800;
+
+    transition:.25s;
+
+    box-shadow:
+    0 8px 20px
+    rgba(34,197,94,.25);
+
+}
+
+#calculateBtn:hover{
+
+    transform:
+    translateY(-3px);
+
+    box-shadow:
+    0 12px 30px
+    rgba(34,197,94,.4);
+
+}
+
+#calculateBtn:active{
+
+    transform:
+    scale(.98);
+
+}
+
+/* ==========================================
+   LOADING SCREEN
+========================================== */
+
+#loadingScreen{
+
+    display:none;
+
+    margin-top:25px;
+
+    text-align:center;
+
+}
+
+#loadingScreen h2{
+
+    color:#16a34a;
+
+    margin-bottom:20px;
+
+}
+
+/* ==========================================
+   LOADING MESSAGES
+========================================== */
+
+#loadingMessages{
+
+    margin-top:20px;
+
+}
+
+#loadingMessages p{
+
+    margin-top:10px;
+
+    padding:10px;
+
+    border-radius:10px;
+
+    background:#f8f4ea;
+
+    border:1px solid #f0e2c8;
+
+}
+
+/* ==========================================
+   MONEY LOADER
+========================================== */
+
+.loadingMoney{
+
+    font-size:3rem;
+
+    margin-bottom:15px;
+
+    animation:
+    moneyBounce
+    1s infinite;
+
+}
+
+@keyframes moneyBounce{
+
+    0%,100%{
+
+        transform:
+        translateY(0);
+
+    }
+
+    50%{
+
+        transform:
+        translateY(-10px);
+
+    }
+
+}
+
+/* ==========================================
+   POLICE ALERT
+========================================== */
+
+.policeAlert{
+
+    animation:
+    policeFlash
+    .6s infinite;
+
+}
+
+@keyframes policeFlash{
+
+    0%{
+
+        background:#ff0000;
+
+        color:white;
+
+    }
+
+    50%{
+
+        background:#0000ff;
+
+        color:white;
+
+    }
+
+    100%{
+
+        background:#ff0000;
+
+        color:white;
+
+    }
+
+}
+
+/* ==========================================
+   BUTTON DISABLED
+========================================== */
+
+#calculateBtn:disabled{
+
+    opacity:.6;
+
+    cursor:not-allowed;
+
+}
+
+/* ==========================================
+   FUTURE SOUND STATUS
+========================================== */
+
+.soundStatus{
+
+    margin-top:15px;
+
+    font-size:.9rem;
+
+    opacity:.75;
+
+}
+/* ==========================================
+   PART 5 - RESULT REPORT
+========================================== */
+
+/* ==========================================
+   RESULT CARD
+========================================== */
+
+#resultCard{
+
+    display:none;
+
+    margin-top:25px;
+
+}
+
+/* ==========================================
+   REPORT HEADER
+========================================== */
+
+.marketHeader{
+
+    text-align:center;
+
+    font-size:1.3rem;
+
+    font-weight:800;
+
+    color:#16a34a;
+
+    margin-bottom:20px;
+
+}
+
+#resultCard h2{
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+    color:#16a34a;
+
+}
+
+/* ==========================================
+   DOWRY VALUE
+========================================== */
+
+.resultPrice{
+
+    text-align:center;
+
+    font-size:3.5rem;
+
+    font-weight:900;
+
+    color:#16a34a;
+
+    margin:25px 0;
+
+    animation:
+    pulseMoney
+    2s infinite;
+
+}
+
+@keyframes pulseMoney{
+
+    0%,100%{
+
+        transform:
+        scale(1);
+
+    }
+
+    50%{
+
+        transform:
+        scale(1.05);
+
+    }
+
+}
+
+/* ==========================================
+   MARKET BADGES
+========================================== */
+
+.marketBadge{
+
+    background:#f8f4ea;
+
+    border:1px solid #f0e2c8;
+
+    border-left:
+    5px solid #22c55e;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    margin-bottom:10px;
+
+    font-weight:600;
+
+}
+
+/* ==========================================
+   ROAST BOXES
+========================================== */
+
+.roastBox{
+
+    margin-top:15px;
+
+    background:#fffdf8;
+
+    border:1px solid #f0e2c8;
+
+    padding:18px;
+
+    border-radius:12px;
+
+    line-height:1.8;
+
+    transition:.25s;
+
+}
+
+.roastBox:hover{
+
+    transform:
+    translateY(-2px);
+
+}
+
+/* ==========================================
+   ROAST HEADINGS
+========================================== */
+
+.roastBox h3{
+
+    color:#16a34a;
+
+    margin-bottom:10px;
+
+}
+
+/* ==========================================
+   FAMILY VERDICT
+========================================== */
+
+.familyVerdict{
+
+    background:#ecfccb;
+
+    border-left:
+    5px solid #65a30d;
+
+}
+
+/* ==========================================
+   MEME REACTION
+========================================== */
+
+.memeReaction{
+
+    background:#fef3c7;
+
+    border-left:
+    5px solid #f59e0b;
+
+}
+
+/* ==========================================
+   NEGATIVE DOWRY
+========================================== */
+
+.negativeValue{
+
+    color:#dc2626;
+
+    text-shadow:
+    0 0 10px
+    rgba(220,38,38,.2);
+
+}
+
+/* ==========================================
+   HUGE DOWRY
+========================================== */
+
+.moonValue{
+
+    color:#16a34a;
+
+    text-shadow:
+    0 0 15px
+    rgba(34,197,94,.35);
+
+}
+
+/* ==========================================
+   INVESTIGATION REPORT
+========================================== */
+
+.investigationReport{
+
+    line-height:2;
+
+    text-align:justify;
+
+}
+
+/* ==========================================
+   SPECIAL INVESTIGATION
+========================================== */
+
+.specialAlert{
+
+    background:#fee2e2;
+
+    border-left:
+    5px solid #dc2626;
+
+}
+
+/* ==========================================
+   LANCE STROLL ALERT
+========================================== */
+
+.strollAlert{
+
+    animation:
+    strollPanic
+    1s infinite;
+
+}
+
+@keyframes strollPanic{
+
+    0%,100%{
+
+        transform:
+        rotate(0deg);
+
+    }
+
+    25%{
+
+        transform:
+        rotate(-1deg);
+
+    }
+
+    75%{
+
+        transform:
+        rotate(1deg);
+
+    }
+
+}
+
+/* ==========================================
+   PART 6 - FINAL POLISH
+========================================== */
+
+/* ==========================================
+   FLOATING AVATAR
+========================================== */
+
+#character{
+
+    animation:
+    floatCharacter
+    4s ease-in-out infinite;
+
+}
+
+@keyframes floatCharacter{
+
+    0%,100%{
+
+        transform:
+        translateY(0);
+
+    }
+
+    50%{
+
+        transform:
+        translateY(-8px);
+
+    }
+
+}
+
+/* ==========================================
+   STOCK TICKER ANIMATION
+========================================== */
+
+.stockTicker{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.stockTicker span{
+
+    animation:
+    tickerMove
+    15s linear infinite;
+
+}
+
+@keyframes tickerMove{
+
+    0%{
+
+        transform:
+        translateX(100vw);
+
+    }
+
+    100%{
+
+        transform:
+        translateX(-150vw);
+
+    }
+
+}
+
+/* ==========================================
+   CARD HOVER EFFECT
+========================================== */
+
+.preview-card,
+.controls,
+#loadingScreen,
+#resultCard{
+
+    transition:.25s;
+
+}
+
+.preview-card:hover,
+.controls:hover,
+#resultCard:hover{
+
+    box-shadow:
+    0 15px 35px
+    rgba(0,0,0,.12);
+
+}
+
+/* ==========================================
+   ICON HOVER
+========================================== */
+
+#wallet,
+#degreeIcon,
+#teamIcon{
+
+    transition:.25s;
+
+}
+
+#wallet:hover,
+#degreeIcon:hover,
+#teamIcon:hover{
+
+    transform:
+    scale(1.15);
+
+}
+
+/* ==========================================
+   FERRARI GLOW SUPPORT
+========================================== */
+
+.ferrariMode{
+
+    box-shadow:
+    0 0 25px
+    rgba(255,0,0,.35);
+
+}
+
+.mercedesMode{
+
+    box-shadow:
+    0 0 25px
+    rgba(0,255,255,.25);
+
+}
+
+.redBullMode{
+
+    box-shadow:
+    0 0 25px
+    rgba(0,0,255,.25);
+
+}
+
+.mclarenMode{
+
+    box-shadow:
+    0 0 25px
+    rgba(255,140,0,.25);
+
+}
+
+/* ==========================================
+   SUCCESS FLASH
+========================================== */
+
+.successFlash{
+
+    animation:
+    successPulse
+    .8s ease;
+
+}
+
+@keyframes successPulse{
+
+    0%{
+
+        transform:
+        scale(1);
+
+    }
+
+    50%{
+
+        transform:
+        scale(1.05);
+
+    }
+
+    100%{
+
+        transform:
+        scale(1);
+
+    }
+
+}
+
+/* ==========================================
+   MONEY RAIN SUPPORT
+========================================== */
+
+.moneyRain{
+
+    position:fixed;
+
+    font-size:2rem;
+
+    pointer-events:none;
+
+    z-index:9999;
+
+}
+
+/* ==========================================
+   POLICE MODE
+========================================== */
+
+.policeMode{
+
+    animation:
+    policeFlashBody
+    .5s infinite;
+
+}
+
+@keyframes policeFlashBody{
+
+    0%{
+
+        background:#ff0000;
+
+    }
+
+    50%{
+
+        background:#0000ff;
+
+    }
+
+    100%{
+
+        background:#ff0000;
+
+    }
+
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer{
+
+    text-align:center;
+
+    margin-top:30px;
+
+    opacity:.75;
+
+    line-height:1.8;
+
+    font-size:.95rem;
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media(max-width:1000px){
+
+    body{
+
+        padding:15px;
+
+    }
+
+    .main-grid{
+
+        grid-template-columns:
+        1fr;
+
+    }
+
+    .preview-card{
+
+        position:static;
+
+    }
+
+    #character{
+
+        width:220px;
+
+        height:380px;
+
+    }
+
+    header h1{
+
+        font-size:2rem;
+
+    }
+
+    #genderSelection h2{
+
+        font-size:1.8rem;
+
+    }
+
+    #genderSelection button{
+
+        width:90%;
+
+        max-width:320px;
+
+    }
+
+    .resultPrice{
+
+        font-size:2.3rem;
+
+    }
+
+    .stockTicker{
+
+        font-size:.85rem;
+
+        gap:15px;
+
+    }
+
+}
+
+/* ==========================================
+   SMALL PHONES
+========================================== */
+
+@media(max-width:600px){
+
+    .preview-card,
+    .controls,
+    #loadingScreen,
+    #resultCard{
+
+        padding:18px;
+
+    }
+
+    .resultPrice{
+
+        font-size:1.8rem;
+
+    }
+
+}
