@@ -1922,3 +1922,17 @@ status.addEventListener(
     }
 
 );
+let backlogs = 0;
+
+if(
+    status.value !==
+    "Working Professional"
+){
+
+    backlogs = Number(
+        document.getElementById(
+            "backlogs"
+        ).value
+    );
+
+}
