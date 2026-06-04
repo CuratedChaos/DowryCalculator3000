@@ -636,19 +636,19 @@ function calculateDowry(){
        SALARY
     ===================== */
 
-    value += salary * 20;
+    value += salary * 5;
 
     if(salary >= 50000)
-        value += 500000;
+        value += 100000;
 
     if(salary >= 100000)
-        value += 1500000;
+        value += 300000;
 
     if(salary >= 200000)
-        value += 3000000;
+        value += 700000;
 
     if(salary >= 500000)
-        value += 10000000;
+        value += 2500000;
 
     /* =====================
        DEGREE
@@ -656,35 +656,35 @@ function calculateDowry(){
 
     const degreeScores = {
 
-        "Computer Engineering":1500000,
+        "Computer Engineering":500000,
 
-        "Mechanical Engineering":1000000,
+        "Mechanical Engineering":350000,
 
-        "Civil Engineering":700000,
+        "Civil Engineering":450000,
 
-        "Electrical Engineering":1200000,
+        "Electrical Engineering":200000,
 
-        "BCom":500000,
+        "BCom":250000,
 
-        "BBA":600000,
+        "BBA":200000,
 
-        "BA":250000,
+        "BA":100000,
 
-        "BSc":700000,
+        "BSc":350000,
 
-        "MBA":2500000,
+        "MBA":500000,
 
-        "MBBS":6000000,
+        "MBBS":600000,
 
-        "Law":3500000,
+        "Law":350000,
 
-        "CA":5000000,
+        "CA":50000,
 
-        "BSc":1000000,
+        "BSc":100000,
 
-        "MSc":1800000,
+        "MSc":180000,
 
-        "Other":100000
+        "Other":10000
 
     };
 
@@ -761,17 +761,17 @@ function calculateDowry(){
 
         "Student":0,
 
-        "Middle Class":500000,
+        "Middle Class":200000,
 
-        "Upper Middle Class":1500000,
+        "Upper Middle Class":500000,
 
-        "Owns One Plot":5000000,
+        "Owns One Plot":1500000,
 
-        "Owns Multiple Plots":15000000,
+        "Owns Multiple Plots":4000000,
 
-        "Builder Uncle":50000000,
+        "Builder Uncle":10000000,
 
-        "Political Connections DLC":100000000
+        "Political Connections DLC":20000000
 
     };
 
