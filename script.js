@@ -1343,21 +1343,7 @@ function generateRoasts(){
     const degreeValue =
     degree.value;
 
-    // const teamValue =
-    // team.value;
-
-    const driverValue =
-    document
-    .getElementById("driver")
-    .value;
-
     let roasts = [];
-
-    roasts.push(
-        randomItem(
-            degreeRoasts[degreeValue]
-        )
-    );
 
     // roasts.push(
     //     randomItem(
@@ -1654,36 +1640,35 @@ function generateReport(){
 
 function strollEmergency(){
 
-    const driverValue =
-    document
-    .getElementById("driver")
-    .value;
-
-    if(
-        driverValue !==
-        "Lance Stroll"
-    ){
-        return "";
-    }
-
-    return `
-
-    <div class="roastBox">
-
-        <h3>
-            🚨 SPECIAL INVESTIGATION
-        </h3>
-
-        <br>
-
-        FIA has been informed of
-        your decision.
-
-    </div>
-
-    `;
+    return "";
 
 }
+
+//     if(
+//         driverValue !==
+//         "Lance Stroll"
+//     ){
+//         return "";
+//     }
+
+//     return `
+
+//     <div class="roastBox">
+
+//         <h3>
+//             🚨 SPECIAL INVESTIGATION
+//         </h3>
+
+//         <br>
+
+//         FIA has been informed of
+//         your decision.
+
+//     </div>
+
+//     `;
+
+// }
 
 console.log(
 "✅ Part 5 Loaded"
