@@ -212,6 +212,10 @@ const degreeIcons = {
 
     "CA":"🧮",
 
+    "BSc":"🔬",
+   
+    "MSc":"🧪",
+
     "Other":"🎓"
 
 };
@@ -220,29 +224,29 @@ const degreeIcons = {
    TEAM ICONS
 =================================== */
 
-const teamIcons = {
+// const teamIcons = {
 
-    "Ferrari":"🔴",
+//     "Ferrari":"🔴",
 
-    "Mercedes":"⚫",
+//     "Mercedes":"⚫",
 
-    "Red Bull":"🐂",
+//     "Red Bull":"🐂",
 
-    "McLaren":"🟠",
+//     "McLaren":"🟠",
 
-    "Williams":"🔵",
+//     "Williams":"🔵",
 
-    "Aston Martin":"🟢",
+//     "Aston Martin":"🟢",
 
-    "Alpine":"💙",
+//     "Alpine":"💙",
 
-    "Haas":"⚪",
+//     "Haas":"⚪",
 
-    "RB":"🪽",
+//     "RB":"🪽",
 
-    "Sauber / Audi":"⚙️"
+//     "Sauber / Audi":"⚙️"
 
-};
+// 
 
 /* ===================================
    HAIR SYSTEM
@@ -630,6 +634,10 @@ function calculateDowry(){
 
         "CA":5000000,
 
+        "BSc":1000000,
+
+        "MSc":1800000,
+
         "Other":100000
 
     };
@@ -1000,6 +1008,16 @@ const degreeRoasts = {
 "Calculating taxes even during festivals.",
 
 "Every relative wants free advice."
+],
+
+"BSc":[
+"Scientist by qualification, unemployed by tradition.",
+"Research paper pending. Family pressure active."
+],
+
+"MSc":[
+"Overqualified for relatives, underpaid by industry.",
+"Added two more years just to avoid adulthood."
 ],
 
 "Other":[
@@ -1871,4 +1889,36 @@ console.log(
 
 console.log(
 "🏎 Ferrari Depression Module Enabled"
+);
+const status =
+document.getElementById("status");
+
+const backlogContainer =
+document.getElementById("backlogContainer");
+
+status.addEventListener(
+
+    "change",
+
+    function(){
+
+        if(
+            status.value ===
+            "Working Professional"
+        ){
+
+            backlogContainer.style.display =
+            "none";
+
+        }
+
+        else{
+
+            backlogContainer.style.display =
+            "block";
+
+        }
+
+    }
+
 );
