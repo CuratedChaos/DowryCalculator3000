@@ -176,8 +176,8 @@ document.getElementById("degreeIcon");
 const team =
 document.getElementById("team");
 
-const teamIcon =
-document.getElementById("teamIcon");
+// const teamIcon =
+// document.getElementById("teamIcon");
 
 const liveRemark =
 document.getElementById("liveRemark");
@@ -394,14 +394,14 @@ function updateDegree(){
    TEAM ICON UPDATE
 =================================== */
 
-function updateTeam(){
+// function updateTeam(){
 
-    teamIcon.textContent =
-    teamIcons[
-        team.value
-    ];
+//     teamIcon.textContent =
+//     teamIcons[
+//         team.value
+//     ];
 
-}
+// }
 
 /* ===================================
    EXTRA LIVE REMARKS
@@ -485,19 +485,19 @@ degree.addEventListener(
 
 );
 
-team.addEventListener(
+// team.addEventListener(
 
-    "change",
+//     "change",
 
-    function(){
+//     function(){
 
-        updateTeam();
+//         updateTeam();
 
-        updateLiveStatus();
+//         updateLiveStatus();
 
-    }
+//     }
 
-);
+// );
 
 /* ===================================
    INITIAL LOAD
@@ -728,83 +728,83 @@ function calculateDowry(){
        F1 TEAM
     ===================== */
 
-    switch(teamValue){
+    // switch(teamValue){
 
-        case "Ferrari":
+    //     case "Ferrari":
 
-            value -= 500000;
+    //         value -= 500000;
 
-            break;
+    //         break;
 
-        case "Mercedes":
+    //     case "Mercedes":
 
-            value += 200000;
+    //         value += 200000;
 
-            break;
+    //         break;
 
-        case "Red Bull":
+    //     case "Red Bull":
 
-            value += 500000;
+    //         value += 500000;
 
-            break;
+    //         break;
 
-        case "McLaren":
+    //     case "McLaren":
 
-            value += 300000;
+    //         value += 300000;
 
-            break;
+    //         break;
 
-        case "Williams":
+    //     case "Williams":
 
-            value += 100000;
+    //         value += 100000;
 
-            break;
+    //         break;
 
-        case "Aston Martin":
+    //     case "Aston Martin":
 
-            value -= 100000;
+    //         value -= 100000;
 
-            break;
+    //         break;
 
-    }
+    // }
 
     /* =====================
        DRIVER
     ===================== */
 
-    switch(driverValue){
+    // switch(driverValue){
 
-        case "Lewis Hamilton":
+    //     case "Lewis Hamilton":
 
-            value += 700000;
+    //         value += 700000;
 
-            break;
+    //         break;
 
-        case "Max Verstappen":
+    //     case "Max Verstappen":
 
-            value += 800000;
+    //         value += 800000;
 
-            break;
+    //         break;
 
-        case "Charles Leclerc":
+    //     case "Charles Leclerc":
 
-            value -= 300000;
+    //         value -= 300000;
 
-            break;
+    //         break;
 
-        case "Fernando Alonso":
+    //     case "Fernando Alonso":
 
-            value += 400000;
+    //         value += 400000;
 
-            break;
+    //         break;
 
-        case "Lance Stroll":
+    //     case "Lance Stroll":
 
-            value -= 2500000;
+    //         value -= 2500000;
 
-            break;
+    //         break;
 
-    }
+    // }
 
     /* =====================
        SPECIAL COMBOS
