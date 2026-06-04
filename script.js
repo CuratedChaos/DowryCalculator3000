@@ -219,8 +219,8 @@ document.getElementById("degree");
 const degreeIcon =
 document.getElementById("degreeIcon");
 
-const team =
-document.getElementById("team");
+// const team =
+// document.getElementById("team");
 
 // const teamIcon =
 // document.getElementById("teamIcon");
@@ -462,8 +462,8 @@ function updateLiveStatus(){
     const degreeValue =
     degree.value;
 
-    const teamValue =
-    team.value;
+    // const teamValue =
+    // team.value;
 
     if(degreeValue === "BCom"){
 
@@ -486,26 +486,26 @@ function updateLiveStatus(){
 
     }
 
-    if(teamValue === "Ferrari"){
+    // if(teamValue === "Ferrari"){
 
-        liveRemark.innerHTML =
-        "🔴 Ferrari fan detected. Emotional damage expected.";
+    //     liveRemark.innerHTML =
+    //     "🔴 Ferrari fan detected. Emotional damage expected.";
 
-    }
+    // }
 
-    if(teamValue === "Mercedes"){
+    // if(teamValue === "Mercedes"){
 
-        liveRemark.innerHTML =
-        "⚫ Still mentally living in 2020.";
+    //     liveRemark.innerHTML =
+    //     "⚫ Still mentally living in 2020.";
 
-    }
+    // }
 
-    if(teamValue === "Red Bull"){
+    // if(teamValue === "Red Bull"){
 
-        liveRemark.innerHTML =
-        "🐂 Candidate wins arguments using DRS.";
+    //     liveRemark.innerHTML =
+    //     "🐂 Candidate wins arguments using DRS.";
 
-    }
+    // }
 
 }
 
@@ -606,8 +606,8 @@ function calculateDowry(){
     // const teamValue =
     // document.getElementById("team").value;
 
-    const driverValue =
-    document.getElementById("driver").value;
+    // const driverValue =
+    // document.getElementById("driver").value;
 
     const hair =
     Number(
@@ -898,16 +898,17 @@ function calculateDowry(){
 
     }
 
-    if(
-        teamValue ===
-        "Ferrari"
-        &&
-        backlogs >= 5
-    ){
+    // if(
+    //     teamValue ===
+    //     "Ferrari"
+    //     &&
+    //     backlogs >= 5
+    // )
+   // {
 
-        value -= 1500000;
+   //      value -= 1500000;
 
-    }
+   //  }
 
     return value;
 
@@ -1509,9 +1510,11 @@ function generateParagraph(value){
     as "${cooking}" while gym attendance
     is rated "${gym}".
 
-    Formula 1 affiliation has been linked
-    to ${teamValue} with driver support
-    for ${driverValue}.
+    
+   The committee remains cautiously
+   optimistic regarding future
+   matrimonial performance.
+   
 
     Based on currently available evidence,
     analysts remain cautiously optimistic
