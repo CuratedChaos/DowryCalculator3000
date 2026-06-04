@@ -557,7 +557,7 @@ updateHair();
 
 updateDegree();
 
-updateTeam();
+// updateTeam();
 
 updateLiveStatus();
 
@@ -603,8 +603,8 @@ function calculateDowry(){
     const gym =
     document.getElementById("gym").value;
 
-    const teamValue =
-    document.getElementById("team").value;
+    // const teamValue =
+    // document.getElementById("team").value;
 
     const driverValue =
     document.getElementById("driver").value;
@@ -699,7 +699,7 @@ function calculateDowry(){
     backlogs * 300000;
 
     if(backlogs === 0)
-        value += 1000000;
+       value += 200000;
 
     /* =====================
        HAIR BONUS
@@ -725,7 +725,7 @@ function calculateDowry(){
 
         "Can Feed Entire Family":2000000,
 
-        "MasterChef Material":5000000
+        "MasterChef Material":1500000
 
     };
 
@@ -769,9 +769,9 @@ function calculateDowry(){
 
         "Owns Multiple Plots":4000000,
 
-        "Builder Uncle":10000000,
-
-        "Political Connections DLC":20000000
+        "Builder Uncle":3000000,
+         
+        "Political Connections DLC":5000000
 
     };
 
@@ -1079,174 +1079,174 @@ const degreeRoasts = {
    TEAM ROASTS
 =================================== */
 
-const teamRoasts = {
+// const teamRoasts = {
 
-"Ferrari":[
+// "Ferrari":[
 
-"We are checking.",
+// "We are checking.",
 
-"Trusts Ferrari strategy voluntarily.",
+// "Trusts Ferrari strategy voluntarily.",
 
-"Experiences emotional damage every Sunday.",
+// "Experiences emotional damage every Sunday.",
 
-"Next year is definitely Ferrari's year."
-],
+// "Next year is definitely Ferrari's year."
+// ],
 
-"Mercedes":[
+// "Mercedes":[
 
-"Still mentally living in 2020.",
+// "Still mentally living in 2020.",
 
-"Hamilton dominance flashbacks detected."
-],
+// "Hamilton dominance flashbacks detected."
+// ],
 
-"Red Bull":[
+// "Red Bull":[
 
-"Winning addiction detected.",
+// "Winning addiction detected.",
 
-"DRS activated during arguments."
-],
+// "DRS activated during arguments."
+// ],
 
-"McLaren":[
+// "McLaren":[
 
-"Candidate recently discovered happiness.",
+// "Candidate recently discovered happiness.",
 
-"Years of suffering finally rewarded."
-],
+// "Years of suffering finally rewarded."
+// ],
 
-"Williams":[
+// "Williams":[
 
-"Underdog enjoyer detected.",
+// "Underdog enjoyer detected.",
 
-"Character development specialist."
-],
+// "Character development specialist."
+// ],
 
-"Aston Martin":[
+// "Aston Martin":[
 
-"Alonso hopium levels critical.",
+// "Alonso hopium levels critical.",
 
-"Trusting development plan."
-],
+// "Trusting development plan."
+// ],
 
-"Haas":[
+// "Haas":[
 
-"Nobody knows why you're here. Respect."
-],
+// "Nobody knows why you're here. Respect."
+// ],
 
-"RB":[
+// "RB":[
 
-"Committee forgot this team existed."
-],
+// "Committee forgot this team existed."
+// ],
 
-"Alpine":[
+// "Alpine":[
 
-"French chaos enthusiast."
-],
+// "French chaos enthusiast."
+// ],
 
-"Sauber / Audi":[
+// "Sauber / Audi":[
 
-"Investing in future potential."
-]
+// "Investing in future potential."
+// ]
 
-};
+// };
 
 /* ===================================
    DRIVER ROASTS
 =================================== */
 
-const driverRoasts = {
+// const driverRoasts = {
 
-"Lewis Hamilton":[
+// "Lewis Hamilton":[
 
-"Still counts Abu Dhabi 2021 manually.",
+// "Still counts Abu Dhabi 2021 manually.",
 
-"Eight-time champion according to personal calculations."
-],
+// "Eight-time champion according to personal calculations."
+// ],
 
-"Charles Leclerc":[
+// "Charles Leclerc":[
 
-"Trust issues with race engineers.",
+// "Trust issues with race engineers.",
 
-"Pain tolerance level: Ferrari fan."
-],
+// "Pain tolerance level: Ferrari fan."
+// ],
 
-"Max Verstappen":[
+// "Max Verstappen":[
 
-"Probably overtook three people while filling this form.",
+// "Probably overtook three people while filling this form.",
 
-"Winning isn't enough. Must dominate."
-],
+// "Winning isn't enough. Must dominate."
+// ],
 
-"Lando Norris":[
+// "Lando Norris":[
 
-"Almost won. Character development continues.",
+// "Almost won. Character development continues.",
 
-"Professional almost merchant."
-],
+// "Professional almost merchant."
+// ],
 
-"Oscar Piastri":[
+// "Oscar Piastri":[
 
-"Quietly stealing everyone's future."
-],
+// "Quietly stealing everyone's future."
+// ],
 
-"Fernando Alonso":[
+// "Fernando Alonso":[
 
-"Has survived multiple F1 generations.",
+// "Has survived multiple F1 generations.",
 
-"Never count him out."
-],
+// "Never count him out."
+// ],
 
-"George Russell":[
+// "George Russell":[
 
-"Complaint filed successfully.",
+// "Complaint filed successfully.",
 
-"Stewards have received your report."
-],
+// "Stewards have received your report."
+// ],
 
-"Carlos Sainz":[
+// "Carlos Sainz":[
 
-"Smooth operator detected."
-],
+// "Smooth operator detected."
+// ],
 
-"Yuki Tsunoda":[
+// "Yuki Tsunoda":[
 
-"Radio messages classified."
-],
+// "Radio messages classified."
+// ],
 
-"Alex Albon":[
+// "Alex Albon":[
 
-"Surviving impossible situations."
-],
+// "Surviving impossible situations."
+// ],
 
-"Lance Stroll":[
+// "Lance Stroll":[
 
-"Psychological evaluation recommended.",
+// "Psychological evaluation recommended.",
 
-"We genuinely cannot explain this choice.",
+// "We genuinely cannot explain this choice.",
 
-"Daddy's credit card detected."
-],
+// "Daddy's credit card detected."
+// ],
 
-"Kimi Antonelli":[
+// "Kimi Antonelli":[
 
-"Age is merely a suggestion."
-],
+// "Age is merely a suggestion."
+// ],
 
-"Pierre Gasly":[
+// "Pierre Gasly":[
 
-"Recovery arc complete."
-],
+// "Recovery arc complete."
+// ],
 
-"Nico Hulkenberg":[
+// "Nico Hulkenberg":[
 
-"Podium loading..."
-],
+// "Podium loading..."
+// ],
 
-"Esteban Ocon":[
+// "Esteban Ocon":[
 
-"Teammates nervous already."
-]
+// "Teammates nervous already."
+// ]
 
-};
+// };
 
 /* ===================================
    FAMILY REACTIONS
@@ -1342,8 +1342,8 @@ function generateRoasts(){
     const degreeValue =
     degree.value;
 
-    const teamValue =
-    team.value;
+    // const teamValue =
+    // team.value;
 
     const driverValue =
     document
@@ -1358,17 +1358,17 @@ function generateRoasts(){
         )
     );
 
-    roasts.push(
-        randomItem(
-            teamRoasts[teamValue]
-        )
-    );
+    // roasts.push(
+    //     randomItem(
+    //         teamRoasts[teamValue]
+    //     )
+    // );
 
-    roasts.push(
-        randomItem(
-            driverRoasts[driverValue]
-        )
-    );
+    // roasts.push(
+    //     randomItem(
+    //         driverRoasts[driverValue]
+    //     )
+    // );
 
     return roasts;
 
@@ -1458,13 +1458,13 @@ function generateParagraph(value){
     const degreeValue =
     degree.value;
 
-    const teamValue =
-    team.value;
+    // const teamValue =
+    // team.value;
 
-    const driverValue =
-    document
-    .getElementById("driver")
-    .value;
+    // const driverValue =
+    // document
+    // .getElementById("driver")
+    // .value;
 
     const salary =
     Number(
