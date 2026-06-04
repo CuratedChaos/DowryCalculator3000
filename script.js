@@ -31,6 +31,12 @@ document.getElementById("height");
 const skinToneSlider =
 document.getElementById("skinTone");
 
+const status =
+document.getElementById("status");
+
+const backlogContainer =
+document.getElementById("backlogContainer");
+
 /* ===================================
    GLOBAL DATA
 =================================== */
@@ -143,6 +149,46 @@ heightSlider.addEventListener(
 updateSkinTone();
 
 updateHeight();
+
+function updateStatus(){
+
+    if(
+
+        status.value ===
+        "Working Professional"
+
+        ||
+
+        status.value ===
+        "Business Owner"
+
+        ||
+
+        status.value ===
+        "Government Employee"
+
+    ){
+
+        backlogContainer.style.display =
+        "none";
+
+    }
+
+    else{
+
+        backlogContainer.style.display =
+        "block";
+
+    }
+
+}
+
+status.addEventListener(
+    "change",
+    updateStatus
+);
+
+updateStatus();
 
 console.log(
 "✅ Part 1 Loaded"
@@ -1890,49 +1936,3 @@ console.log(
 console.log(
 "🏎 Ferrari Depression Module Enabled"
 );
-const status =
-document.getElementById("status");
-
-const backlogContainer =
-document.getElementById("backlogContainer");
-
-status.addEventListener(
-
-    "change",
-
-    function(){
-
-        if(
-            status.value ===
-            "Working Professional"
-        ){
-
-            backlogContainer.style.display =
-            "none";
-
-        }
-
-        else{
-
-            backlogContainer.style.display =
-            "block";
-
-        }
-
-    }
-
-);
-let backlogs = 0;
-
-if(
-    status.value !==
-    "Working Professional"
-){
-
-    backlogs = Number(
-        document.getElementById(
-            "backlogs"
-        ).value
-    );
-
-}
